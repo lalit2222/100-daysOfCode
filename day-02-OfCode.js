@@ -28,11 +28,9 @@ while (num2 > 0) {
   let fact = 1;
   let rem = num2 % 10;
   for (let i = 1; i <= rem; i++) {
-    fact = fact * i;
+    fact *= i;
   }
-  sum = sum + fact;
+  sum += fact;
   num2 = Math.floor(num2 / 10);
 }
-
-if (copy1 == sum) console.log("strong number");
-else console.log("not strong number");
+console.log(copy1 == sum ? "strong number" : "not strong number ");
