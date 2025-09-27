@@ -18,3 +18,21 @@ let matchNumber = sq % Math.pow(10, count) === copy;
 matchNumber
   ? console.log("automorphic numebr ")
   : console.log("not automorphic number ");
+
+// strong numebr = 145 => 1 + 24 + 120 = 145 :::: strong number
+
+let num2 = Number(prompt("Enter a number : "));
+let sum = 0,
+  copy1 = num2;
+while (num2 > 0) {
+  let fact = 1;
+  let rem = num2 % 10;
+  for (let i = 1; i <= rem; i++) {
+    fact = fact * i;
+  }
+  sum = sum + fact;
+  num2 = Math.floor(num2 / 10);
+}
+
+if (copy1 == sum) console.log("strong number");
+else console.log("not strong number");
