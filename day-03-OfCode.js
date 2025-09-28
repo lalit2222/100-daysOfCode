@@ -1,14 +1,33 @@
 // rotate the array by n times [1,2,3,4,5] = [3,4,5,1,2]
 
 let arr = [1, 2, 3, 4, 5];
-let n = 2
+// let n = 2
 
-for (let j = 1; j <= n; j++) {
-  let firstVal = arr[0];
-  for (let i = 0; i < arr.length; i++) {
-    arr[i] = arr[i + 1];
+// for (let j = 1; j <= n; j++) {
+//   let firstVal = arr[0];
+//   for (let i = 0; i < arr.length; i++) {
+//     arr[i] = arr[i + 1];
+//   }
+//   arr[arr.length - 1] = firstVal;
+// }
+
+// console.log(arr);
+
+let prompt = require("prompt-sync")();
+let n = Number(prompt("Enter the numebr : "));
+
+arrayRotateByNTimes(arr, 0, n - 1);
+arrayRotateByNTimes(arr, n, arr.length - 1);
+arrayRotateByNTimes(arr, 0, arr.length - 1);
+
+function arrayRotateByNTimes(arr, i, j) {
+  while (i < j) {
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+    i++;
+    j--;
   }
-  arr[arr.length - 1] = firstVal;
 }
 
 console.log(arr);
